@@ -1,0 +1,24 @@
+<div>
+  <h1>Registrati</h1>
+  <form [formGroup]="form">
+    <input
+      type="text"
+      placeholder="Inserisci un Nome"
+      formControlName="name"
+      class="form-control"
+    />
+    <input
+      type="email"
+      placeholder="Inserisci la tua email"
+      formControlName="email"
+      class="form-control"
+    />
+    <input
+      type="password"
+      placeholder="Crea una password"
+      formControlName="password"
+      class="form-control"
+    />
+    <button (click)="register()" class="btn btn-primary">Registrati</button>
+  </form>
+</div>

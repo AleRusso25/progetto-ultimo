@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "email": "ale@gmail.com",
+      "password": "$2a$10$f2qG3OuORi5L/4XL.NLMvOucvAEC/V4YHVIzuLbwiONx1LjJOY2mq",
+      "name": "ale",
+      "id": 1
+    },
+    {
+      "email": "alessia@gmail.it",
+      "password": "$2a$10$d.5ue4SD81oS4yhNBAjt9eVclPfnv1NBAlf0HpTjQJ36EUwxyJ8ya",
+      "name": "Alessia",
+      "id": 2
+    }
+  ],
+  "movies": [
+  { "id": 1, "title": "Inception", "genere": "Fantascienza" },
+  { "id": 2, "title": "Il Padrino", "genere": "Drammatico" },
+  { "id": 3, "title": "Pulp Fiction"," genere": "Crime" },
+  { "id": 4, "title": "Matrix","genere": "Fantascienza" },
+  { "id": 5, "title": "Forrest Gump"," genere": "Drammatico" },
+  { "id": 6, "title": "The Dark Knight", "genere": "Azione" },
+  { "id": 7, "title": "Fight Club", "genere": "Drammatico" },
+  { "id": 8, "title": "Interstellar", "genere": "Fantascienza" },
+  { "id": 9, "title": "Shutter Island", "genere": "Thriller" },
+  { "id": 10," title": "Il Signore degli Anelli", "genere": "Fantasy" },
+  { "id": 11, "title": "Ritorno al Futuro"," genere": "Fantascienza" },
+  { "id": 12, "title": "Gladiatore", "genere": "Storico" },
+  { "id": 13," title": "Star Wars: Una Nuova Speranza", "genere": "Fantascienza" },
+  { "id": 14, "title": "Titanic", "genere": "Romantico" },
+  { "id": 15, "title": "Schindler's List", "genere": "Storico" }
+],
+  "favorites": []
+}

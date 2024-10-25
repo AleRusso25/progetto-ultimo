@@ -1,0 +1,22 @@
+<div class="container">
+  <form (ngSubmit)="login()">
+    <h1>Accedi</h1>
+    <input
+      type="email"
+      placeholder="Inserisci la tua email"
+      [(ngModel)]="form.email"
+      class="form-control"
+      name="email"
+      required
+    />
+    <input
+      type="password"
+      placeholder="inserisci la password"
+      [(ngModel)]="form.password"
+      class="form-control"
+      name="password"
+      required
+    />
+    <button class="btn btn-primary" type="submit">Accedi</button>
+  </form>
+</div>
