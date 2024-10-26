@@ -1,7 +1,14 @@
-<div>
-  <ul>
-    <li *ngFor="let movie of allMovies">
-      {{ movie.title }}
-    </li>
-  </ul>
+<div class="container d-flex">
+  <div class="row">
+    <div class="col col-3 card" *ngFor="let movie of allMovies">
+      <img src="{{ movie.image }}" class="card-img-top cover h-100" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">
+          {{ movie.genere }}
+        </p>
+        <a href="#" class="btn btn-primary">Save in Favourite</a>
+      </div>
+    </div>
+  </div>
 </div>

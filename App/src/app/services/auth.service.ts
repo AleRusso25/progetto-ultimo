@@ -29,8 +29,6 @@ export class AuthService {
   isLoggedIn$ = this.authSubject$;
   autoLogoutTimer: any;
 
-
-
   register(newUser: Partial<IUser>) {
     return this.http.post<IAccesData>(this.registerUrl, newUser);
   }
@@ -49,15 +47,14 @@ export class AuthService {
     );
   }
   autoLogout(expDate: Date) {
-   const exp=expDate.getTime() - new Date().getTime()
-  this.autoLogoutTimer = setTimeout(()=>{
-      this.logout()
-    }, exp)
+    const exp = expDate.getTime() - new Date().getTime();
+    this.autoLogoutTimer = setTimeout(() => {
+      this.logout();
+    }, exp);
   }
   logout() {
-     this.authSubject$.next(null);
-     localStorage.removeItem('accesData');
-     this.router.navigate(['/auth/login']);
+    this.authSubject$.next(null);
+    localStorage.removeItem('accesData');
+    this.router.navigate(['/auth/login']);
   }
 }
-
