@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavComponent implements OnInit {
   utente!: IAuth | null;
-  constructor(private authSrv: AuthService) {}
+  constructor(public authSrv: AuthService) {}
   ngOnInit() {
     this.authSrv.user$
 

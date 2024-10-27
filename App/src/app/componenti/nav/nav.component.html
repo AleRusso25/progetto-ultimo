@@ -1,51 +1,59 @@
-<div class="col-md-3 mb-2 mb-md-0">
-  <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-  </a>
-</div>
+<div class="bg-black p-4">
+  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+    <li>
+      <a
+        *ngIf="authSrv.getLoggedUser()"
+        [routerLink]="['home']"
+        class="nav-link px-2"
+        >Home</a
+      >
+    </li>
+    <li *ngIf="authSrv.getLoggedUser()" class="nav-item">
+      <a [routerLink]="['favorite']" class="nav-link px-2">Favorite</a>
+    </li>
 
-<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-  <li>
-    <a [routerLink]="['home']" class="nav-link px-2 link-secondary">Home</a>
-  </li>
-  <li class="nav-item">
-    <a [routerLink]="['movies']" class="nav-link px-2">Favorite</a>
-  </li>
-  <li class="nav-item">
-    <a
-      [routerLink]="['profilo']"
-      role="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-      class="nav-link px-2"
-      >Profilo</a
-    >
-  </li>
-  <li class="nav-item">
-    <a [routerLink]="['utenti']" routerLinkActive="active" class="nav-link px-2"
-      >Utenti</a
-    >
-  </li>
-</ul>
-
-<div class="col-md-3 text-end">
-  <a
-    [routerLink]="['/auth/login']"
-    type="button"
-    class="btn btn-outline-primary me-2"
-    >Login</a
-  >
-  <a [routerLink]="['/auth/register']" type="button" class="btn btn-primary"
-    >Register</a
-  >
-</div>
-<div class="text-end">
-  <button
-    type="button"
-    id="logout"
-    name="logout"
-    class="btn btn-danger"
-    (click)="logout()"
-  >
-    Esci
-  </button>
+    <li *ngIf="authSrv.getLoggedUser()" class="nav-item">
+      <a
+        [routerLink]="['profilo']"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        class="nav-link px-2"
+        >Profilo</a
+      >
+    </li>
+    <li *ngIf="authSrv.getLoggedUser()" class="nav-item">
+      <a
+        [routerLink]="['utenti']"
+        routerLinkActive="active"
+        class="nav-link px-2"
+        >Utenti</a
+      >
+    </li>
+    <li class="col-md-3 text-end">
+      <a
+        [routerLink]="['/auth/login']"
+        type="button"
+        class="btn btn-outline-primary me-2"
+        >Login</a
+      >
+      <a
+        [routerLink]="['/auth/register']"
+        type="button"
+        class="btn btn-outline-primary me-5"
+        >Register</a
+      >
+    </li>
+    <li *ngIf="authSrv.getLoggedUser()" class="text-end">
+      <button
+        type="button"
+        id="logout"
+        name="logout"
+        class="btn btn-danger ms-5"
+        (click)="logout()"
+      >
+        Esci
+      </button>
+    </li>
+  </ul>
 </div>

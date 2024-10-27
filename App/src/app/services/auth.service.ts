@@ -16,7 +16,9 @@ export class AuthService {
     throw new Error('Method not implemented.');
   }
   isLoggedIn: boolean | undefined;
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this.isUserLogin();
+  }
 
   jwtHelper = new JwtHelperService();
   registerUrl: string = environment.registerUrl;
@@ -26,7 +28,7 @@ export class AuthService {
     tap((accesData) => this.isLoggedIn == !!accesData),
     map((accesData) => accesData?.user)
   );
-  isLoggedIn$ = this.authSubject$;
+  isLoggedIn$ = this.authSubject$.pipe(map((accesData) => !!accesData));
   autoLogoutTimer: any;
 
   register(newUser: Partial<IUser>) {
@@ -56,5 +58,21 @@ export class AuthService {
     this.authSubject$.next(null);
     localStorage.removeItem('accesData');
     this.router.navigate(['/auth/login']);
+  }
+  getLoggedUser() {
+    const accesData = localStorage.getItem('accesData');
+    if (accesData) return JSON.parse(accesData).user;
+  }
+  isUserLogin() {
+    const user: string | null = localStorage.getItem('accesData');
+    if (!user) return;
+
+    const accesData: IAccesData = JSON.parse(user);
+
+    if (this.jwtHelper.isTokenExpired(accesData.accessToken)) {
+      localStorage.removeItem('accesData');
+      return;
+    }
+    this.authSubject$.next(accesData);
   }
 }

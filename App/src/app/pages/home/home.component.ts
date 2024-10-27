@@ -15,4 +15,7 @@ export class HomeComponent implements OnInit {
       this.allMovies = movies;
     });
   }
+  onImageError(event: Event) {
+    console.error("Impossibile caricare l'immagine:");
+  }
 }

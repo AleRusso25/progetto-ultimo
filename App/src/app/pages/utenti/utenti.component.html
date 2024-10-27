@@ -1,5 +1,24 @@
-<div>
-  <ul>
-    <li *ngFor="let user of users">{{ user.name }}</li>
-  </ul>
+<div
+  class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center bg-black"
+>
+  <div *ngFor="let user of users" class="list-group ">
+    <a
+      href="#"
+      class="list-group-item list-group-item-action d-flex gap-3 "
+      aria-current="true"
+    >
+      <img
+        src="https://img.freepik.com/vettori-premium/icona-del-profilo-utente-in-stile-piatto-illustrazione-del-vettore-avatar-membro-su-sfondo-isolato-concetto-di-business-del-segno-di-autorizzazione-umana_157943-15752.jpg"
+        alt="twbs"
+        width="32"
+        height="32"
+        class="rounded-circle flex-shrink-0"
+      />
+      <div class="d-flex gap-2 w-100 justify-content-between">
+        <div>
+          <h6 class="mb-0">{{ user.name }}</h6>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>

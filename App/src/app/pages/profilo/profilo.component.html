@@ -1,0 +1,74 @@
+<main>
+  <div class="row justify-content-center">
+    <h1 class="col-3 border-bottom">Profile</h1>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-2">
+        <img
+          src="https://img.freepik.com/vettori-premium/icona-del-profilo-utente-in-stile-piatto-illustrazione-del-vettore-avatar-membro-su-sfondo-isolato-concetto-di-business-del-segno-di-autorizzazione-umana_157943-15752.jpg"
+          alt=""
+          class="d-block w-100"
+        />
+      </div>
+      <div class="col-2">
+        <button type="button" class="btn btn-secondary btn-sm">
+          {{ loggedUser.name }}
+        </button>
+        <h5 class="mt-5">Language:</h5>
+        <div class="col justify-content-start border-bottom p-2">
+          <select
+            class="form-select bg-black border-white text-white"
+            aria-label="Default select example"
+          >
+            <option selected>English</option>
+            <option value="1">Italy</option>
+            <option value="2">Spanish</option>
+            <option value="3">French</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <h5>Autoplay Controls</h5>
+
+          <ul class="px-0">
+            <li class="list-group-item d-flex align-items-center">
+              <input
+                class="form-check-input me-1 fs-3 rounded-0"
+                type="checkbox"
+                value=""
+                id="firstCheckbox"
+              />
+              <label class="form-check-label" for="firstCheckbox"
+                >Autoplay next episode.</label
+              >
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              <input
+                class="form-check-input me-1 fs-3 rounded-0"
+                type="checkbox"
+                value=""
+                id="secondCheckbox"
+              />
+              <label class="form-check-label" for="secondCheckbox"
+                >Autoplay previews while browsing on all devices.</label
+              >
+            </li>
+                       
+          </ul>
+        </div>
+      </div>
+      <div class="row gap-2 justify-content-center">
+        <button type="button " class="col-1 btn btn-outline-light border-2">
+          SAVE
+        </button>
+        <button type="button " class="col-1 btn btn-outline-secondary border-2">
+          CANCEL
+        </button>
+        <button type="button " class="col-2 btn btn-outline-secondary border-2">
+          DELATE PROFIL
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
